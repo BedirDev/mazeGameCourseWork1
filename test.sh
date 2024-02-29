@@ -129,8 +129,8 @@ playerMovementCoordinateTest "q" ""
 
 echo -e "=====================================================================\n"
 
-#TEST SPECIAL CHARACTERS chatgpt prompt "what are special characters"
-echo "TEST SPECIAL CHARACTERS"
+#TEST SPECIAL CHARACTERS
+#This test is adapted from chatGPT’s response to the prompt "what are special characters"
 playerMovementCoordinateTest "\033" "Unknown Character"
 
 echo -e "=====================================================================\n"
@@ -162,7 +162,8 @@ stringMap_5x5=$(read_file_and_convert_to_string "validMazes/map_5x5.txt")
 # as we are using a function designed for similar thing, the function adds Q at the end of the string and here we are removing that char
 stringMap_5x5="${stringMap_5x5//Q/}"
 
-#chatGPT promtpt "How to use sed emptyline removal for variables?"
+
+#This test is adapted from chatGPT’s response to the prompt "How to use sed emptyline removal for variables?"
 filterOutputTwoFileInput=$(echo "$filterOutputTwoFileInput" | sed '/^$/d')
 stringMap_5x5=$(echo "$stringMap_5x5" | sed '/^$/d')
 
@@ -385,8 +386,7 @@ echo "TEST GAME OVER"
 navigation_files=("navigation_gameOver/navigation_5x5GameOver.txt" "navigation_gameOver/navigation_13x4GameOver.txt" "navigation_gameOver/navigation_9x6GameOver.txt" "navigation_gameOver/navigation_11x11GameOver.txt" "navigation_gameOver/navigation_30x20GameOver.txt" "navigation_gameOver/navigation_7x54GameOver.txt" "navigation_gameOver/navigation_61x60GameOver.txt" "navigation_gameOver/navigation_43x46GameOver.txt")
 maze_files=("validMazes/map_5x5.txt" "validMazes/map_13x4.txt" "validMazes/map_9x6.txt" "validMazes/map_11x11.txt" "validMazes/map_30x20.txt" "validMazes/map_7x54.txt" "validMazes/map_61x60.txt" "validMazes/map_43x46.txt")
 
-#maps named map_61x60.txt, map_43x40.txt, and map_7x54.txt are created by chatGPT
-#with the prompt "Hi, can you please give me text based maze maps where # are walls S is start and E is the end. A maze has a height and a width, with a maximum of 100 and a minimum of 5"
+#These maps are adapted from chatGPT’s response to the prompt "Hi, can you please give me text based maze maps where # are walls S is start and E is the end. A maze has a height and a width, with a maximum of 100 and a minimum of 5"
 
 # ITERATE THROUGH navigation_files with an incerement
 for ((i = 0; i < ${#navigation_files[@]}; i++))
